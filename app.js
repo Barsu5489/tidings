@@ -1,10 +1,11 @@
-import express from 'express'
-import mysql from 'mysql'
-import bcrypt from 'bcrypt'
-import session from 'express-session'
+const express  = require('express')
+const mysql = require('mysql') 
+const  bcrypt = require ('bcrypt') 
+const  session = require('express-session') 
 
 
 const app = express()
+
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
@@ -16,6 +17,13 @@ app.get('/',(req,res)=>{
 app.get('/about', (req,res)=>{{
     res.render('about-us')
 }})
+app.get('/login',(req,res)=>{
+    res.render('login')
+})
+app.get('/signup',(req,res)=>{
+    res.render('signup')
+})
+
 
 const PORT = process.env.PORT || 3000
 
